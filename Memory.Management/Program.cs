@@ -1,9 +1,17 @@
-﻿namespace Memory.Management
+﻿using BenchmarkDotNet.Running;
+
+namespace Memory.Management
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+            var summary = BenchmarkRunner.Run<RefReturnExampleBenchmark>();
+            Console.WriteLine(summary);
+
+            /*
+            RefReturnExample.Run();
+
             int i = 123;
             string s = "Hello World";
 
@@ -18,7 +26,7 @@
 
             Console.WriteLine("Number Value: " + i);
             Console.WriteLine("String Value: " + s);
-            Console.ReadLine();
+            Console.ReadLine();*/
         }
 
         class User
